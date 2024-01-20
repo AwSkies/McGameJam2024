@@ -10,7 +10,7 @@ public class TextAction : ScriptableObject
     public Color color = Color.white;
     public TMP_FontAsset font;
     [Min(0)]
-    public float speed = 2;
+    public float speed = 1f;
     [Header("Action")]
     public Action action;
     [Range(0f, 1f)]
