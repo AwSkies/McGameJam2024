@@ -9,8 +9,8 @@ public class TextAction : ScriptableObject
     public string text = "...";
     public Color color = Color.white;
     public TMP_FontAsset font;
-    [Min(1)]
-    public int speed = 2;
+    [Min(0)]
+    public float speed = 2;
     [Header("Action")]
     public Action action;
     [Range(0f, 1f)]

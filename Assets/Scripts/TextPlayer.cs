@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,11 +19,11 @@ public class TextPlayer : MonoBehaviour
         }
         set
         {
-            charactersWritten = value;
-            if (current != null && ActionCharacter() == charactersWritten)
+            if (current != null && charactersWritten < ActionCharacter() && ActionCharacter() <= value)
             {
                 current.PerformAction();
             }
+            charactersWritten = value;
         }
     }
     private int charactersWritten = 0;
@@ -39,12 +40,8 @@ public class TextPlayer : MonoBehaviour
         if (current != null)
         {
             time++;
-            if (time >= current.speed && CharactersWritten < current.text.Length)
-            {
-                time = 0;
-                CharactersWritten++;
-                text.text = current.text[..CharactersWritten];
-            }
+            CharactersWritten = Math.Clamp((int) (current.speed * time), 0, current.text.Length);
+            text.text = current.text[..CharactersWritten];
         }
     }
 
@@ -65,14 +62,9 @@ public class TextPlayer : MonoBehaviour
             }
             else
             {
-                if (CharactersWritten < ActionCharacter())
-                {
-                    current.PerformAction();
-                }
                 CharactersWritten = current.text.Length;
-                text.text = current.text;
+                time = (int) (current.text.Length / current.speed) + 1;
             }
-            time = 0;
         }
     }
 
@@ -91,6 +83,8 @@ public class TextPlayer : MonoBehaviour
     {
         current = actions.Dequeue();
         text.text = "";
+        time = 0;
+        charactersWritten = -1;
         CharactersWritten = 0;
         text.font = current.font;
         text.color = current.color;
