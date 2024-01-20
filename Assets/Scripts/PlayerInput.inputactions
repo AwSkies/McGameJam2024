@@ -2,7 +2,7 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Input",
+            "name": "Point&Click",
             "id": "f8f93a98-2a2a-44d0-b0d7-27f345d6b569",
             "actions": [
                 {
