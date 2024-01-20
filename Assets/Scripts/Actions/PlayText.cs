@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextButton : Action
+public class PlayText : Action
 {
     [SerializeField]
     private TextAction[] textActions;

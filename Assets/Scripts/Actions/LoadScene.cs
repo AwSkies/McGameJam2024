@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderButton : Action
+public class LoadScene : Action
 {
     [SerializeField]
     private string scene;
