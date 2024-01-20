@@ -7,16 +7,16 @@ public class TextButton : Action
     [SerializeField]
     private TextAction[] textActions;
 
-    private TextManager textManager;
+    private TextPlayer textPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        textManager = FindObjectOfType<TextManager>();
+        textPlayer = FindObjectOfType<TextPlayer>();
     }
     
     public override void Perform()
     {
-        textManager.Play(textActions);
+        textPlayer.Play(textActions);
     }
 }
