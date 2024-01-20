@@ -10,7 +10,7 @@ public class TextPlayer : MonoBehaviour
 
     private Queue<TextAction> actions = new();
     private TextAction current;
-    private int CharactersWritten 
+    private int CharactersWritten
     {
         get
         {
@@ -50,7 +50,8 @@ public class TextPlayer : MonoBehaviour
 
     void OnAdvanceText()
     {
-        if (current != null){
+        if (current != null)
+        {
             if (CharactersWritten == current.text.Length)
             {
                 if (actions.Count != 0)
@@ -75,7 +76,7 @@ public class TextPlayer : MonoBehaviour
             time = 0;
         }
     }
-    
+
     public void Play(TextAction[] textActions)
     {
         actions = new Queue<TextAction>(textActions);
@@ -90,6 +91,6 @@ public class TextPlayer : MonoBehaviour
 
     private int ActionCharacter()
     {
-        return (int) (current.fraction * current.text.Length);
+        return (int)(current.fraction * current.text.Length);
     }
 }
