@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderButton : Button
+public class SceneLoaderButton : Action
 {
     [SerializeField]
-    private string scene;
+    private Scene scene;
 
-    public override void Activate()
+    public override void Perform()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene.buildIndex);
     }
 }
