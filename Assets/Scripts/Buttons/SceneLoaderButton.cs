@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneLoaderButton : Action
 {
     [SerializeField]
-    private Scene scene;
+    private string scene;
 
     public override void Perform()
     {
-        SceneManager.LoadScene(scene.buildIndex);
+        SceneManager.LoadScene(scene);
     }
 }
