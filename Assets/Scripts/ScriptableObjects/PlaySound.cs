@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "PlaySoundAction", menuName = "Actions/Play Sound", order = 0)]
 public class PlaySound : Action
 {
     [SerializeField]
@@ -9,6 +10,7 @@ public class PlaySound : Action
     [SerializeField]
     Vector2 source = Vector2.zero;
     [SerializeField]
+    [Range(0f, 1f)]
     float volume = 1;
     public override void Perform()
     {

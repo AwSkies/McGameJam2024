@@ -1,8 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TextAction", menuName = "TextAction", order = 0)]
+[CreateAssetMenu(fileName = "TextAction", menuName = "Text Action", order = 0)]
 public class TextAction : ScriptableObject
 {
+    [TextArea(5, 20)]
     public string text = "...";
     [Min(1)]
     public int speed = 2;

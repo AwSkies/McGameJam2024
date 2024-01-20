@@ -2,21 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "PlayTextAction", menuName = "Actions/Play Text", order = 0)]
 public class PlayText : Action
 {
     [SerializeField]
     private TextAction[] textActions;
-
-    private TextPlayer textPlayer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        textPlayer = FindObjectOfType<TextPlayer>();
-    }
     
     public override void Perform()
     {
-        textPlayer.Play(textActions);
+        FindObjectOfType<TextPlayer>().Play(textActions);
     }
 }

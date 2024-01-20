@@ -10,7 +10,22 @@ public class TextPlayer : MonoBehaviour
 
     private Queue<TextAction> actions;
     private TextAction current;
-    private int charactersWritten;
+    private int CharactersWritten 
+    {
+        get
+        {
+            return charactersWritten;
+        }
+        set
+        {
+            charactersWritten = value;
+            if ((int) (current.fraction * current.text.Length) == charactersWritten)
+            {
+                current.action.Perform();
+            }
+        }
+    }
+    private int charactersWritten = 0;
     private int time;
 
     // Start is called before the first frame update
@@ -21,22 +36,30 @@ public class TextPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        time++;
-        if (time >= current.speed && charactersWritten <= current.text.Length)
+        if (current != null)
         {
-            time = 0;
-            charactersWritten++;
-            textObject.text = current.text[..charactersWritten];
-            if (CalculateFraction(charactersWritten - 1, current) < current.fraction && CalculateFraction(charactersWritten, current) >= current.fraction)
+            time++;
+            if (time >= current.speed && CharactersWritten < current.text.Length)
             {
-                current.action.Perform();
+                time = 0;
+                CharactersWritten++;
+                textObject.text = current.text[..CharactersWritten];
             }
         }
     }
 
     void OnAdvance()
     {
-        current = actions.Dequeue();
+        if (actions.Count != 0)
+        {
+            current = actions.Dequeue();
+            time = 0;
+            CharactersWritten = 0;
+        }
+        else
+        {
+            current = null;
+        }
     }
     
     public void Play(TextAction[] textActions)
@@ -48,10 +71,5 @@ public class TextPlayer : MonoBehaviour
     public void Play(TextAction textAction)
     {
         Play(new TextAction[] { textAction });
-    }
-
-    private float CalculateFraction(int characters, TextAction textAction)
-    {
-        return characters / (float) textAction.text.Length;
     }
 }
