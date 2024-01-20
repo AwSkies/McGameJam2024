@@ -20,7 +20,7 @@ MonoBehaviour:
     sit amet eleifend nibh. Nam ut iaculis urna. Quisque imperdiet tincidunt enim
     quis rhoncus.\r"
   color: {r: 1, g: 1, b: 1, a: 1}
-  font: {fileID: 11400000, guid: fd01fccbdc67cfd48b9345f677732462, type: 2}
+  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   speed: 2
   action: {fileID: 11400000, guid: ec2c6c1b98706744197bb011abc17390, type: 2}
   fraction: 0

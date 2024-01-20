@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class TextPlayer : MonoBehaviour
 {
+    private GameManager gameManager;
     private TMP_Text text;
 
     private Queue<TextAction> actions = new();
@@ -32,6 +33,7 @@ public class TextPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         text = GetComponent<TMP_Text>();
     }
 
@@ -86,7 +88,7 @@ public class TextPlayer : MonoBehaviour
         time = 0;
         charactersWritten = -1;
         CharactersWritten = 0;
-        text.font = current.font;
+        text.font = current.font != null ? current.font : gameManager.defaultFont;
         text.color = current.color;
     }
 
