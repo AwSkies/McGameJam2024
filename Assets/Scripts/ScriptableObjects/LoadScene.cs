@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(fileName = "LoadSceneAction", menuName = "Actions/Load Scene", order = 0)]
+[CreateAssetMenu(fileName = "LoadSceneAction", menuName = "Action/Load Scene", order = 0)]
 public class LoadScene : Action
 {
     [SerializeField]

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlaySoundAction", menuName = "Actions/Play Sound", order = 0)]
+[CreateAssetMenu(fileName = "PlaySoundAction", menuName = "Action/Play Sound", order = 0)]
 public class PlaySound : Action
 {
     [SerializeField]

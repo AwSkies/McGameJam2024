@@ -8,7 +8,7 @@ public class TextPlayer : MonoBehaviour
 {
     private TMP_Text textObject;
 
-    private Queue<TextAction> actions;
+    private Queue<TextAction> actions = new();
     private TextAction current;
     private int CharactersWritten 
     {
@@ -19,7 +19,7 @@ public class TextPlayer : MonoBehaviour
         set
         {
             charactersWritten = value;
-            if ((int) (current.fraction * current.text.Length) == charactersWritten)
+            if (current != null && current.action != null && ActionCharacter() == charactersWritten)
             {
                 current.action.Perform();
             }
@@ -48,28 +48,48 @@ public class TextPlayer : MonoBehaviour
         }
     }
 
-    void OnAdvance()
+    void OnAdvanceText()
     {
-        if (actions.Count != 0)
-        {
-            current = actions.Dequeue();
+        if (current != null){
+            if (CharactersWritten == current.text.Length)
+            {
+                if (actions.Count != 0)
+                {
+                    current = actions.Dequeue();
+                    CharactersWritten = 0;
+                }
+                else
+                {
+                    current = null;
+                }
+            }
+            else
+            {
+                if (CharactersWritten < ActionCharacter() && current.action != null)
+                {
+                    current.action.Perform();
+                }
+                CharactersWritten = current.text.Length;
+                textObject.text = current.text;
+            }
             time = 0;
-            CharactersWritten = 0;
-        }
-        else
-        {
-            current = null;
         }
     }
     
     public void Play(TextAction[] textActions)
     {
         actions = new Queue<TextAction>(textActions);
-        OnAdvance();
+        current = actions.Dequeue();
+        CharactersWritten = 0;
     }
 
     public void Play(TextAction textAction)
     {
         Play(new TextAction[] { textAction });
+    }
+
+    private int ActionCharacter()
+    {
+        return (int) (current.fraction * current.text.Length);
     }
 }

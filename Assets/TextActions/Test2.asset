@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade8e5119b98a824ea5303e441694288, type: 3}
+  m_Name: Test2
+  m_EditorClassIdentifier: 
+  text: "Aliquam iaculis feugiat risus eu tincidunt. Donec sit amet nisi quis eros
+    maximus mattis nec sit amet ligula. Ut ac suscipit sem. Proin enim massa, hendrerit
+    et pellentesque eu, rutrum et lacus. Aliquam posuere, quam at fermentum tincidunt,
+    metus quam sagittis arcu, eget aliquet turpis mi eu ipsum. Pellentesque sem massa,
+    tristique ut erat quis, efficitur porttitor risus. Duis ut consequat nunc. Quisque
+    sit amet eleifend nibh. Nam ut iaculis urna. Quisque imperdiet tincidunt enim
+    quis rhoncus. Cras volutpat vel dolor ut tincidunt. Sed cursus urna augue, molestie
+    tincidunt erat semper id. Nulla varius consectetur lacus sed iaculis. Praesent
+    id lectus in velit ornare accumsan sed ac ex. Maecenas euismod, eros eget aliquam
+    viverra, lectus purus cursus libero, eu dapibus tortor ante non odio.\r"
+  speed: 2
+  action: {fileID: 0}
+  fraction: 0
