@@ -20,4 +20,4 @@ MonoBehaviour:
     elementum vulputate. Nullam ac orci facilisis, pulvinar justo et, aliquet dolor.
   speed: 2
   action: {fileID: 11400000, guid: ec2c6c1b98706744197bb011abc17390, type: 2}
-  fraction: 1
+  fraction: 0.157
