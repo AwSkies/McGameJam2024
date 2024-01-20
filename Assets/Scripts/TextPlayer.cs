@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(TMP_Text))]
-public abstract class TextPlayer : MonoBehaviour
+public class TextPlayer : MonoBehaviour
 {
     private TMP_Text textObject;
 
