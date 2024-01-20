@@ -24,12 +24,12 @@ public abstract class TextPlayer : MonoBehaviour
         if (time >= current.speed && charactersWritten <= current.text.Length)
         {
             time = 0;
-            if (CalculateFraction(charactersWritten, current) < current.fraction && CalculateFraction(charactersWritten + 1, current) >= current.fraction)
+            charactersWritten++;
+            textObject.text = current.text[..charactersWritten];
+            if (CalculateFraction(charactersWritten - 1, current) < current.fraction && CalculateFraction(charactersWritten, current) >= current.fraction)
             {
                 current.action.Perform();
             }
-            charactersWritten++;
-            textObject.text = current.text[..charactersWritten];
         }
     }
 
