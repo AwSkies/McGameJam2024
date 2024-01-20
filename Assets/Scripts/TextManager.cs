@@ -5,16 +5,12 @@ using UnityEngine;
 
 public abstract class TextManager : MonoBehaviour
 {
-    [SerializeField]
-    private int defaultSpeed = 2;
-
     private TMP_Text textObject;
 
     private Queue<TextAction> actions;
     private TextAction current;
     private int charactersWritten;
     private int time;
-    private int speed;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +21,7 @@ public abstract class TextManager : MonoBehaviour
     void FixedUpdate()
     {
         time++;
-        if (time >= defaultSpeed && charactersWritten <= current.text.Length)
+        if (time >= current.speed && charactersWritten <= current.text.Length)
         {
             time = 0;
             if (CalculateFraction(charactersWritten, current) < current.fraction && CalculateFraction(charactersWritten + 1, current) >= current.fraction)
