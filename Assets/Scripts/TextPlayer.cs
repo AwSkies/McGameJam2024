@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class TextPlayer : MonoBehaviour
 {
-    private TMP_Text textObject;
+    private TMP_Text text;
 
     private Queue<TextAction> actions = new();
     private TextAction current;
@@ -19,9 +19,9 @@ public class TextPlayer : MonoBehaviour
         set
         {
             charactersWritten = value;
-            if (current != null && current.action != null && ActionCharacter() == charactersWritten)
+            if (current != null && ActionCharacter() == charactersWritten)
             {
-                current.action.Perform();
+                current.PerformAction();
             }
         }
     }
@@ -31,7 +31,7 @@ public class TextPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textObject = GetComponent<TMP_Text>();
+        text = GetComponent<TMP_Text>();
     }
 
     void FixedUpdate()
@@ -43,7 +43,7 @@ public class TextPlayer : MonoBehaviour
             {
                 time = 0;
                 CharactersWritten++;
-                textObject.text = current.text[..CharactersWritten];
+                text.text = current.text[..CharactersWritten];
             }
         }
     }
@@ -56,8 +56,7 @@ public class TextPlayer : MonoBehaviour
             {
                 if (actions.Count != 0)
                 {
-                    current = actions.Dequeue();
-                    CharactersWritten = 0;
+                    AdvanceText();
                 }
                 else
                 {
@@ -66,12 +65,12 @@ public class TextPlayer : MonoBehaviour
             }
             else
             {
-                if (CharactersWritten < ActionCharacter() && current.action != null)
+                if (CharactersWritten < ActionCharacter())
                 {
-                    current.action.Perform();
+                    current.PerformAction();
                 }
                 CharactersWritten = current.text.Length;
-                textObject.text = current.text;
+                text.text = current.text;
             }
             time = 0;
         }
@@ -80,13 +79,21 @@ public class TextPlayer : MonoBehaviour
     public void Play(TextAction[] textActions)
     {
         actions = new Queue<TextAction>(textActions);
-        current = actions.Dequeue();
-        CharactersWritten = 0;
+        AdvanceText();
     }
 
     public void Play(TextAction textAction)
     {
         Play(new TextAction[] { textAction });
+    }
+
+    private void AdvanceText()
+    {
+        current = actions.Dequeue();
+        text.text = "";
+        CharactersWritten = 0;
+        text.font = current.font;
+        text.color = current.color;
     }
 
     private int ActionCharacter()
