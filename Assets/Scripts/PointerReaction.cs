@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class PointerReaction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
     private Texture2D hoverCursor;
@@ -24,6 +24,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData data)
     {
         Cursor.SetCursor(hoverCursor, gameManager.GetCursorHotSpot(hoverCursor), CursorMode.Auto);
+        
     }
 
     public void OnPointerExit(PointerEventData data)

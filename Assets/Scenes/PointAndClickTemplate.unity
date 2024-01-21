@@ -354,8 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b966ec0b2329f0b448ed9cd9161d440e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panAreaWidth: 50
-  panSpeed: 0.00332
+  panAreaWidth: 100
+  panSpeed: 0.00222222
   room: {fileID: 0}
 --- !u!1 &1674909148
 GameObject:
