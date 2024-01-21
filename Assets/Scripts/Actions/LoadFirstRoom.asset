@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75409cf84ea4b9d4fa3cc13e51bf57ed, type: 3}
   m_Name: LoadFirstRoom
   m_EditorClassIdentifier: 
-  scene: 
+  scene: TestRoom
