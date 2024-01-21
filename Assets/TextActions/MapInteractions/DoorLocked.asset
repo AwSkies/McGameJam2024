@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ade8e5119b98a824ea5303e441694288, type: 3}
-  m_Name: Begin
+  m_Name: DoorLocked
   m_EditorClassIdentifier: 
-  text: 'You open your eyes.                                     '
+  text: You tried opening the door. The door is locked.
   color: {r: 1, g: 1, b: 1, a: 1}
   font: {fileID: 0}
   speed: 1
-  action: {fileID: 11400000, guid: a47b8e89aec9f45bcbd9dc3607b8fac2, type: 2}
-  fraction: 1
+  action: {fileID: 0}
+  fraction: 0
