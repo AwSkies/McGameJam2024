@@ -23,4 +23,9 @@ public class TextAction : ScriptableObject
             action.Perform();
         }
     }
+
+    public void Play()
+    {
+        FindObjectOfType<TextPlayer>().Play(this);
+    }
 }
