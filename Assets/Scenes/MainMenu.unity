@@ -167,10 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b6cca8036d5654095b07b84ad3bc9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultFont: {fileID: 11400000, guid: fd01fccbdc67cfd48b9345f677732462, type: 2}
-  defaultCursor: {fileID: 2800000, guid: 738117c9b75d91f4e8cd67cb80634ea5, type: 3}
-  hoverCursor: {fileID: 2800000, guid: 86a383710c9f3b0408d42ec565b0056e, type: 3}
-  cursorHotSpotFraction: {x: 0.75, y: 0}
+  defaults: {fileID: 11400000, guid: 70b35f1c062ef384d82bbaeaffe2f87a, type: 2}
 --- !u!1 &963423171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184e9523633cdcd46b9811a712375d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaults: {fileID: 11400000, guid: 70b35f1c062ef384d82bbaeaffe2f87a, type: 2}
 --- !u!114 &1953045008
 MonoBehaviour:
   m_ObjectHideFlags: 0

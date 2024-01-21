@@ -1,34 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PointerReaction : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
+    private Defaults defaults;
+    [SerializeField]
     private Texture2D hoverCursor;
-
-    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
         if (hoverCursor == null)
         {
-            hoverCursor = gameManager.hoverCursor;
+            hoverCursor = defaults.hoverCursor;
         }
     }
 
     public void OnPointerEnter(PointerEventData data)
     {
-        Cursor.SetCursor(hoverCursor, gameManager.GetCursorHotSpot(hoverCursor), CursorMode.Auto);
-        
+        Cursor.SetCursor(hoverCursor, GetCursorHotSpot(hoverCursor, defaults.hotSpotFraction), CursorMode.Auto);
     }
 
     public void OnPointerExit(PointerEventData data)
     {
-        Cursor.SetCursor(gameManager.defaultCursor, gameManager.GetCursorHotSpot(gameManager.defaultCursor), CursorMode.Auto);
+        Cursor.SetCursor(defaults.cursor, GetCursorHotSpot(defaults.cursor, defaults.hotSpotFraction), CursorMode.Auto);
+    }
+
+    public static Vector2 GetCursorHotSpot(Texture2D texture, Vector2 hotSpotFraction)
+    {
+        return Vector2.Scale(new Vector2(texture.width, texture.height), hotSpotFraction);
     }
 }
