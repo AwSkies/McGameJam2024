@@ -1,33 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(PointerReaction))]
+public class Interactable : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
-    private Texture2D hoverCursor;
+    private Action action;
 
-    private GameManager gameManager;
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnPointerClick(PointerEventData data)
     {
-        gameManager = FindObjectOfType<GameManager>();
-        if (hoverCursor == null)
-        {
-            hoverCursor = gameManager.hoverCursor;
-        }
-    }
-
-    public void OnPointerEnter(PointerEventData data)
-    {
-        Cursor.SetCursor(hoverCursor, gameManager.GetCursorHotSpot(hoverCursor), CursorMode.Auto);
-    }
-
-    public void OnPointerExit(PointerEventData data)
-    {
-        Cursor.SetCursor(gameManager.defaultCursor, gameManager.GetCursorHotSpot(gameManager.defaultCursor), CursorMode.Auto);
+        action.Perform();
     }
 }
