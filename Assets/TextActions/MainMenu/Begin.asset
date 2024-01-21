@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade8e5119b98a824ea5303e441694288, type: 3}
   m_Name: Begin
   m_EditorClassIdentifier: 
-  text: You open your eyes.
+  text: 'You open your eyes.                                     '
   color: {r: 1, g: 1, b: 1, a: 1}
   font: {fileID: 0}
   speed: 1

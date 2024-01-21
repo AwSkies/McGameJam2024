@@ -27,6 +27,6 @@ public class GameManager : MonoBehaviour
 
     public Vector2 GetCursorHotSpot(Texture2D texture)
     {
-        return Vector2.Scale(texture.Size(), cursorHotSpotFraction);
+        return Vector2.Scale(new Vector2(texture.width, texture.height), cursorHotSpotFraction);
     }
 }
