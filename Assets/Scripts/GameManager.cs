@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Screen.SetResolution(854, 480, true);
+        // Screen.SetResolution(854, 480, true);
         Cursor.SetCursor(defaultCursor, GetCursorHotSpot(defaultCursor), CursorMode.Auto);
         DontDestroyOnLoad(gameObject);
     }
