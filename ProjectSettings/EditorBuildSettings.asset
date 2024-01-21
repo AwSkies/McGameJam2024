@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestRoom.unity
     guid: 2198bee38d9a99f4d968d8650065ed3b
+  - enabled: 1
+    path: Assets/Scenes/MainRoom.unity
+    guid: 1f24d077780f745a3bbe16ef3d091991
+  - enabled: 1
+    path: Assets/Scenes/Rooms/BedRoom.unity
+    guid: c1cf5baa528574156a776879e23a5383
+  - enabled: 1
+    path: Assets/Scenes/Rooms/ValveRoom.unity
+    guid: c5fad2f6e89ac40b4ae7484188baf91d
   m_configObjects: {}

@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade8e5119b98a824ea5303e441694288, type: 3}
-  m_Name: LoadValveRoom
+  m_Script: {fileID: 11500000, guid: 51da215c635e05a40af934f46c5bf0be, type: 3}
+  m_Name: DoorSound
   m_EditorClassIdentifier: 
-  text: You entered the valve room.
-  color: {r: 1, g: 1, b: 1, a: 1}
-  font: {fileID: 0}
-  speed: 1
-  action: {fileID: 11400000, guid: 525e9c1af8d3743d4aa86decc39c1f45, type: 2}
-  fraction: 1
+  clip: {fileID: 8300000, guid: a33fe5b5ce447453e83a7eec59a14a9a, type: 3}
+  source: {x: 0, y: 0}
+  volume: 1
