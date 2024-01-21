@@ -487,7 +487,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 324.1, y: 124.37}
+  m_SizeDelta: {x: 651.31, y: 124.37}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1114512391
 MonoBehaviour:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Contraption
+  m_text: A Contraption
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fd01fccbdc67cfd48b9345f677732462, type: 2}
   m_sharedMaterial: {fileID: 2079562272063383855, guid: fd01fccbdc67cfd48b9345f677732462, type: 2}
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.25
+  m_fontSize: 88.7
   m_fontSizeBase: 97.39
   m_fontWeight: 400
   m_enableAutoSizing: 1
