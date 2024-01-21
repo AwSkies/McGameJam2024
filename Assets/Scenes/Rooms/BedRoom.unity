@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbda6079b5c0e742bb88ee8e8011365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaults: {fileID: 0}
+  defaults: {fileID: 11400000, guid: 70b35f1c062ef384d82bbaeaffe2f87a, type: 2}
   hoverCursor: {fileID: 0}
 --- !u!61 &1272888647
 BoxCollider2D:

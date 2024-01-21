@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         // Screen.SetResolution(854, 480, true);
         Cursor.SetCursor(defaults.cursor, PointerReaction.GetCursorHotSpot(defaults.cursor, defaults.hotSpotFraction), CursorMode.Auto);
         DontDestroyOnLoad(gameObject);
+        GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
